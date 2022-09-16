@@ -17,12 +17,20 @@
     <canvas id="paint" width="500px" height="500px">您的浏览器版本过低!</canvas>
 
     <script>
-        // 1、获取画布
         let canvas = document.getElementById('paint')
-        // 2、获取上下文对象
         let ctx = canvas.getContext('2d')
-        console.log(ctx)
-        
+        ctx.beginPath()
+        ctx.moveTo(100,100)
+        ctx.lineTo(100,400)
+        ctx.lineTo(300,300)
+        ctx.lineTo(200,200)
+        ctx.lineTo(400,200)
+        ctx.lineTo(400,400)
+        ctx.strokeStyle = 'red'
+        ctx.lineWidth = 5
+        ctx.stroke()
+        ctx.closePath()
+
     </script>
 </body>
 </html>

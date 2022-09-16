@@ -17,11 +17,23 @@
     <canvas id="paint" width="500px" height="500px">您的浏览器版本过低!</canvas>
 
     <script>
-        // 1、获取画布
         let canvas = document.getElementById('paint')
-        // 2、获取上下文对象
         let ctx = canvas.getContext('2d')
-        console.log(ctx)
+        drawLine(100,100,400,100,'red',5)
+        drawLine(400,100,400,400,'green',5)
+        drawLine(400,400,100,400,'pink',5)
+        drawLine(100,400,100,100,'blue',5)
+        
+        // 封装画直线方法
+        function drawLine(x1,y1,x2,y2,color,width){
+            ctx.beginPath()
+            ctx.moveTo(x1,y1)
+            ctx.lineTo(x2,y2)
+            ctx.strokeStyle = color
+            ctx.lineWidth = width
+            ctx.stroke()
+            ctx.closePath()
+        }
         
     </script>
 </body>
